@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
+    <html class="no-js" lang="en" xmlns="http://www.w3.org/1999/html">
+
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+            <title>{% block title %}ACM程序设计大学生科技创新实践基地{% endblock %}</title>
+
+            <!--
+            <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,700" />
+            -->
+
+            <!-- If you are using CSS version, only link these 2 files, you may add app.css to use for your overrides if you like. -->
+            <link rel="stylesheet" href="/static/css/normalize.css">
+            <link rel="stylesheet" href="/static/css/foundation.css">
+            <link rel="stylesheet" href="/static/css/marketing.css">
+
+            <!-- If you are using the gem version, you need this only -->
+            <link rel="stylesheet" href="/static/css/app.css">
+
+            <script src="/static/js/vendor/modernizr.js"></script>
+
+        </head>
+
+        <body class="antialiased hide-extras">
+            <div class="marketing off-canvas-wrap">
+                <div class="inner-wrap">
+
+                    <div class="sticky">
+                        <nav class="top-bar" data-topbar>
+                        <ul class="title-area">
+                            <li class="name">
+                            <h1><a href="/">ACM程序设计大学生科技创新实践基地</a></h1>
+                            </li>
+                            <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
+                        </ul>
+
+                        <section class="top-bar-section">
+                        <!-- Right Nav Section -->
+                        <ul class="right">
+                            <li class=""><a href="news">新闻</a></li>
+                            <li class=""><a href="show">展示</a></li>
+                            <li class="has-dropdown">
+                            <a href="team">团队</a>
+                            <ul class="dropdown">
+                                <li><a href="team/association">ACM协会</a></li>
+                                <li><a href="team/training">ACM集训队</a></li>
+                            </ul>
+                            </li>
+                            <li class="has-dropdown">
+                            <a href="contest">竞赛</a>
+                            <ul class="dropdown">
+                                <li><a href="contest/school">校赛</a></li>
+                                <li><a href="contest/provincial">省赛</a></li>
+                                <li><a href="contest/regional">区域赛</a></li>
+                                <li><a href="contest/final">区域赛</a></li>
+                            </ul>
+                            </li>
+                            <li class=""><a href="#">项目申请</a></li>
+                            <li class=""><a href="http://acm.sdut.edu.cn/bbs/" target="_blank">ACM论坛</a></li>
+                        </ul>
+
+                        {% comment %}
+                        <!-- Left Nav Section -->
+                        <ul class="left">
+                            <li><a href="#">Left Nav Button</a></li>
+                        </ul>
+                        {% endcomment %}
+                        </section>
+                        </nav>
+                    </div>
+
+                    {% block content %}
+                    {% endblock %}
+
+                    <div class="zurb-footer-bottom">
+                        <div class="row">
+                            <div class="medium-8 medium-offset-2 columns medium-text-center">
+                                <ul class="zurb-links">
+                                    <li><a href="about">About</a></li>
+                                    <li><a href="news">News<span class="show-for-medium-up"> &amp; Events</span></a></li>
+                                    <li><a href="contact">Contact</a></li>
+                                    <li><a href="sitemap">Sitemap</a></li>
+                                </ul>
+                                <p class="copyright">&copy; 2014 SDUTACM All rights reserved.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="exit-off-canvas"></a>
+
+                </div>
+            </div>
+
+            <script src="/static/js/vendor/jquery.js"></script>
+            <script src="/static/js/foundation.min.js"></script>
+            <script>
+                $(document).foundation();
+            </script>
+        </body>
+    </html>
