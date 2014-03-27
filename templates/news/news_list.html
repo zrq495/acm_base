@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% for i in news %}
+        <section id="main-content">
+            <div class="row">
+                <div class="medium-8 medium-centered columns">
+                    <h3 class="text-center"><a href="{% url news_show i.id %}">{{ i.title }}</a></h3>
+                    <hr>
+{#                    {{ i.content|safe }}#}
+                </div>
+            </div>
+        </section>
+    {% endfor %}
+{% endblock %}

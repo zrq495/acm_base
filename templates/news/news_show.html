@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <section id="main-content">
+        <div class="row">
+            <div class="medium-8 medium-centered columns">
+                <h3 class="text-center">{{ news.title }}</h3>
+                <hr>
+                {{ news.content|safe }}
+            </div>
+        </div>
+    </section>
+{% endblock %}
