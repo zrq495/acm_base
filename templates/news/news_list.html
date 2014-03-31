@@ -5,11 +5,35 @@
         <section id="main-content">
             <div class="row">
                 <div class="medium-8 medium-centered columns">
+
                     <h3 class="text-center"><a href="{% url news_show i.id %}">{{ i.title }}</a></h3>
                     <hr>
-{#                    {{ i.content|safe }}#}
+                    {#                    {{ i.content|safe }}#}
                 </div>
             </div>
         </section>
     {% endfor %}
+    <div class="medium-8 medium-centered columns">
+        <div class="pagination-centered">
+            <ul class="pagination">
+                {% ifequal current_page 1 %}
+                    <li class="arrow unavailable"><a>&laquo;</a></li>
+                {% else %}
+                    <li class="arrow"><a href="/news/page/{{ previous_page }}">&laquo;</a></li>
+                {% endifequal %}
+                {% for i in page_list %}
+                    {% ifequal i current_page %}
+                        <li class="current"><a>{{ i }}</a></li>
+                    {% else %}
+                        <li><a href="/news/page/{{ i }}">{{ i }}</a></li>
+                    {% endifequal %}
+                {% endfor %}
+                {% ifequal current_page page_count %}
+                    <li class="arrow unavailable"><a>&raquo;</a></li>
+                {% else %}
+                    <li class="arrow"><a href="/news/page/{{ next_page }}">&raquo;</a></li>
+                {% endifequal %}
+            </ul>
+        </div>
+    </div>
 {% endblock %}

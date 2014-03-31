@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block title %}
+{% endblock %}
+
+{% block content %}
+    <style>
+        div.clearing-container .small-block-grid-6 > li:nth-of-type(6n+1) {
+            clear: none;
+        }
+    </style>
+    <section id="main-content">
+        <div class="medium-10 medium-centered columns">
+            <div class="row">
+                <hr>
+                <ul class="clearing-thumbs small-block-grid-6" data-clearing>
+                    {% for img in image %}
+                        <li><a href="/media/{{ img.image_name }}"><img data-caption="{{ img.description }}" src="/media/{{ img.image_name }}"></a></li>
+                    {% endfor %}
+                </ul>
+
+                <div class="pagination-centered">
+                    <ul class="pagination">
+                        {% ifequal current_page 1 %}
+                            <li class="arrow unavailable"><a>&laquo;</a></li>
+                        {% else %}
+                            <li class="arrow"><a href="/show/{{ previous_page }}">&laquo;</a></li>
+                        {% endifequal %}
+                        {% for i in page_list %}
+                            {% ifequal i current_page %}
+                                <li class="current"><a>{{ i }}</a></li>
+                                {#                    <li class="current"><a href="/show/{{ i }}">{{ i }}</a></li>#}
+                            {% else %}
+                                <li><a href="/show/{{ i }}">{{ i }}</a></li>
+                            {% endifequal %}
+                        {% endfor %}
+                        {% ifequal current_page page_count %}
+                            <li class="arrow unavailable"><a>&raquo;</a></li>
+                        {% else %}
+                            <li class="arrow"><a href="/show/{{ next_page }}">&raquo;</a></li>
+                        {% endifequal %}
+                    </ul>
+                </div>
+                <hr>
+            </div>
+        </div>
+    </section>
+{% endblock %}

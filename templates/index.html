@@ -1,7 +1,22 @@
 {% extends "base.html" %}
 
 {% block content %}
-{% for i in a %}
-    <p>{{ i }}</p>
-{% endfor %}
+    <section id="main-content">
+        <div class="medium-8 medium-centered columns">
+            <div class="row">
+                <div class="orbit-container">
+                    <ul data-orbit class="orbit orbit-container" data-options="timer_speed:3000;">
+                        {% for img in image %}
+                        <li>
+                            <img src="/media/{{ img.image_name }}">
+                            <div class="orbit-container">
+                                {{ img.description }}
+                            </div>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 {% endblock %}
