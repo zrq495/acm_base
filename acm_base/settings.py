@@ -131,6 +131,7 @@ INSTALLED_APPS = (
 
     'news',
     'image',
+    'contest',
 )
 
 # A sample logging configuration. The only tangible logging

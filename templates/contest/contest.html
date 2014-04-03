@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <section role="main" class="scroll-container">
+        <div class="row">
+            <div class="medium-3 column">
+                <div class="hide-for-small">
+                    <div class="sidebar">
+                        <nav class="side-nav">
+                            {% for con_list in contest_list %}
+                                <li>
+                                    <h4><a href="{% url contest con_list.identifier %}">{{ con_list.contest_name }}</a></h4>
+                                </li>
+                            {% endfor %}
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <div class="medium-9 medium-text-center column">
+                <h2>{{ contest.contest_name }}</h2>
+                <p>{{ contest.introduction|safe }}</p>
+                <p>{{ contest.award|safe }}</p>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
