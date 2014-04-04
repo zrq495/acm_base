@@ -27,6 +27,7 @@ urlpatterns += patterns((''),
                         (r'^news/', include('news.urls')),
                         (r'^show/', include('image.urls')),
                         (r'^contest/', include('contest.urls')),
+                        (r'^team/', include('team.urls')),
                         )
 
 if settings.DEBUG:
