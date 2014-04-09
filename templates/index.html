@@ -9,9 +9,9 @@
                         <ul data-orbit class="orbit orbit-container" data-options="timer_speed:3000;">
                             {% for img in image %}
                                 <li>
-                                    <img src="/media/{{ img.image_name }}">
+                                    <img src="{{ img.image.url }}">
                                     <div class="orbit-container">
-                                        {{ img.description }}
+                                        {% if img.caption %}<p>{{ img.caption }}</p>{% endif %}
                                     </div>
                                 </li>
                             {% endfor %}

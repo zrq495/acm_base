@@ -24,6 +24,7 @@ urlpatterns = patterns('',
 )
 
 urlpatterns += patterns((''),
+                        (r'^photo/', include('photologue.urls')),
                         (r'^news/', include('news.urls')),
                         (r'^show/', include('image.urls')),
                         (r'^contest/', include('contest.urls')),

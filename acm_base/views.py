@@ -4,10 +4,12 @@ from django.shortcuts import render_to_response
 
 import datetime
 
-from image.models import *
+# from image.models import *
 from news.models import *
+from photologue.models import Photo
+
 
 def index(request):
-    image = Image.objects.all()[:5]
+    image = Photo.objects.filter(index_show=True)[:5]
     news = News.objects.all()[:10]
     return render_to_response('index.html', {'image': image, 'news': news})

@@ -1,0 +1,29 @@
+{% extends "photologue/root.html" %}
+{% load url from future %}
+
+{% block title %}最新相册{% endblock %}
+
+{% block content %}
+
+<h1>最新相册</h1>
+
+{% if latest %}
+    {% for gallery in latest %}
+    <div class="photo-gallery">
+        <h2><a href="{{ gallery.get_absolute_url }}">{{ gallery.title }}</a></h2>
+        <ul class="small-block-grid-6">
+        {% for photo in gallery.sample %}
+        <li>
+            <a href="{{ photo.get_absolute_url }}"><img src="{{ photo.get_thumbnail_url }}" class="{% block gallery-photo-class %}{% endblock %}" alt="{{ photo.title }}"/></a>
+        </li>
+        {% endfor %}
+        </ul>
+    </div>
+    {% endfor %}
+{% else %}
+    <p>没有相册</p>
+{% endif %}
+
+<p><a href="{% url 'pl-gallery-list' 1 %}">查看所有相册</a></p>
+
+{% endblock %}
