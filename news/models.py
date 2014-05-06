@@ -13,7 +13,7 @@ class News(models.Model):
     author = models.ForeignKey(User)
     publish_time = models.DateTimeField(auto_now_add=True)
     update_time = models.DateTimeField(auto_now=True)
-    display = models.BooleanField()
+    display = models.BooleanField(default=True)
 
     def __unicode__(self):
         return u'%s' %(self.title)

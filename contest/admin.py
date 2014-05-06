@@ -12,5 +12,5 @@ class ContestAdmin(admin.ModelAdmin):
             '/static/tinymce/config.js',
         )
 
-admin.site.register(ContestList)
+#admin.site.register(ContestList)
 admin.site.register(Contest, ContestAdmin)

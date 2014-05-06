@@ -3,7 +3,6 @@
 from django.shortcuts import render_to_response
 
 import datetime
-
 # from image.models import *
 from news.models import *
 from photologue.models import Photo

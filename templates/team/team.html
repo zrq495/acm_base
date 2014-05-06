@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <section role="main" class="scroll-container">
+        <div class="row">
+            <div class="medium-3 column">
+                <div class="hide-for-small">
+                    <div class="sidebar">
+                        <nav class="side-nav">
+                            {% for ti in tall %}
+                                <li>
+                                    <h4><a href="{% url team ti.team_identifier %}">{{ ti.team_name }}</a></h4>
+                                </li>
+                            {% endfor %}
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <div class="medium-9 medium-text-center column">
+                {% for t in team %}
+                    {% if forloop.first %}
+                        <h2>{{ t.team_identifier.team_name }}</h2>
+                    {% endif %}
+                    {% ifnotequal t.team_identifier.team_identifier "introducation" %}
+                        <h3>{{ t.team_year }}</h3>
+                    {% endifnotequal %}
+                    <p>{{ t.team_member|safe }}</p>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
